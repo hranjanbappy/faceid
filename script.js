@@ -31,6 +31,11 @@ async function start() {
       const box = resizedDetections[i].detection.box
       const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString() })
       drawBox.draw(canvas)
+
+      // Check if the label is "Captain America" and open the link
+      if (result.label === 'Captain America') {
+        window.location.href = 'https://www.facebook.com/mystudyfriend'
+      }
     })
   })
 }
